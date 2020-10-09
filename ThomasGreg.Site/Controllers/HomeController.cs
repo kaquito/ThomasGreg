@@ -48,7 +48,7 @@ namespace ThomasGreg.Site.Controllers
         [HttpPost]
         public IActionResult Add(Cliente cliente)
         {
-            var ret = new WebApiService<Cliente>().PutTAsync($"{_RouteSite}Add/", cliente);
+            var ret = new WebApiService<Cliente>().PostTAsync($"{_RouteSite}Add/", cliente);
             return View(ret.Result);
         }
 

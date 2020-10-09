@@ -17,15 +17,23 @@ namespace ThomasGreg.API.Logradouro
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            Configuration = builder.Build();
+            //Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
-
+                
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.Configure<ConfigCore>(Configuration.GetSection("ConfigCore"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

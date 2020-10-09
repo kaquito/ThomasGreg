@@ -5,12 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.8" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.8" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.8" />
+    <Content Remove="App.config" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThomasGreg.API.Entity\ThomasGreg.API.Entity.csproj" />
     <ProjectReference Include="..\ThomasGreg.DAL\ThomasGreg.DAL.csproj" />
   </ItemGroup>
 

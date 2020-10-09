@@ -5,17 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.Extensions" Version="3.1.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.8" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.8" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.8" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.8" />
+    <Content Remove="App.config" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThomasGreg.API.Entity\ThomasGreg.API.Entity.csproj" />
     <ProjectReference Include="..\ThomasGreg.DAL\ThomasGreg.DAL.csproj" />
-    <ProjectReference Include="..\ThomasGreg.Entidade\ThomasGreg.Entidade.csproj" />
   </ItemGroup>
 
 

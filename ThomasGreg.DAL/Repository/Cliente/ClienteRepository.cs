@@ -11,7 +11,6 @@ namespace ThomasGreg.DAL.Repository.Cliente
 {
     public class ClienteRepository : Base.Dapper
     {
-
         public bool Add(ThomasGreg.Entidade.Cliente cliente)
         {
             try
@@ -103,8 +102,8 @@ namespace ThomasGreg.DAL.Repository.Cliente
         {
             try
             {
-                var sql = "exec BuscarTodosClientes";
-                               
+                var sql = "exec BuscarTodosCliente";
+
                 using (var conn = Connection)
                 {
                     if (conn.State == ConnectionState.Closed)
@@ -115,7 +114,7 @@ namespace ThomasGreg.DAL.Repository.Cliente
                     return objeto;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new List<ThomasGreg.Entidade.Cliente>();
             }
